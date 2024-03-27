@@ -11,7 +11,9 @@ bool haspath(int sv, int ev,bool*visited,int**edges,int n){
                 if(i==ev){
                     return true;
                 }
-                return haspath(i, ev, visited, edges, n);
+                if(haspath(i, ev, visited, edges, n)){
+                    return true;
+                }
                 visited[i]=true;
             }
         }
